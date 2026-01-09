@@ -9,6 +9,13 @@ export default function Header() {
                     Les Petits Plats
                 </Link>
             </div>
+            <div className="text-center">
+                <h1>Découvrez nos recettes du quotidien, simples et délicieuses</h1>
+            </div>
+            <div className="searchbar text-center m-4">
+                <input type="text" placeholder="Rechercher une recette..." />
+                {/* Barre de recherche à implémenter ici */}
+            </div>
         </header>
     );
 } 
