@@ -12,6 +12,7 @@ background-position: center;
 background-size: cover;
 min-height: 644px;
     .logo {
+        color: var(--foreground);
         margin: 3rem 0 0 4.5rem;
         font-family: var(--font-anton), sans-serif;
         display: inline-flex;
