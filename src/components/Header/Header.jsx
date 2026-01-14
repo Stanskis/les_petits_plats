@@ -1,9 +1,7 @@
 'use client';
 import Link from "next/link";
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-
+import HeaderSearchbar from "../HeaderSearchbar/HeaderSearchbar";
 
 const HeaderContainer = styled.header`
 width: 100%;
@@ -32,48 +30,10 @@ min-height: 644px;
             font-size: 44px;
         }
     }
-    .searchbar {
-        position: relative;
-        max-width: 954px;
-        margin: 2rem auto;
-    }
-
-    .search-input {
-        width: 100%;
-        padding: 0 20px;
-        padding-right: 60px;
-        height: 60px;
-        border-radius: 11px;
-        border: none;
-        background-color: var(--foreground);
-        color: var(--background);
-        outline: none;
-    }
-
-    .search-button {
-        position: absolute;
-        right: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-        height: 40px;
-        width: 40px;
-        border-radius: 10px;
-        border: none;
-        background-color: #1B1B1B;
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        }
-
-    .search-button:hover {
-        background-color: #9ca3af;
-    }
+    
 `;
 
-
-export default function Header() {
+export default function Header({ data }) {
     return (
         <HeaderContainer>
             <Link href="/" className="logo">
@@ -88,14 +48,7 @@ export default function Header() {
             <div className="title text-center">
                 <h1>Découvrez nos recettes <br /> du quotidien, simples et délicieuses</h1>
             </div>
-            <div className="searchbar text-center">
-                <form action="#" method="get" className="search-form">
-                    <input type="text" id="search-input" name="search" placeholder="Rechercher une recette, un ingrédient, ..." className="search-input" />
-                    <button type="submit" className="search-button">
-                        <FontAwesomeIcon icon={faMagnifyingGlass} />
-                    </button>
-                </form>
-            </div>
+            <HeaderSearchbar data={data} />
         </HeaderContainer>
     );
 } 

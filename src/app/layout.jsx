@@ -1,7 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header/Header";
-import Footer from "@/components/Footer/Footer";
 import { Anton } from "next/font/google";
 
 const geistSans = Geist({
@@ -29,13 +27,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr">
       <body className={`${geistSans.variable} ${geistMono.variable} ${anton.variable}`}>
-        <Header />
-        <main className="flex min-h-screen items-center justify-center font-sans">
-          <div className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16">
-            {children}
-          </div>
-        </main>
-        <Footer />
+        {children}
       </body>
     </html>
   );
