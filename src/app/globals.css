@@ -26,7 +26,20 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background: var(--background);
+  background: var(--foreground);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.font-anton {
+  font-family: var(--font-anton), sans-serif;
+  color: var(--background);
+}
+
+.font-manrope {
+  font-family: var(--font-manrope), sans-serif;
+}
+
+main {
+  background-color: var(--foreground);
 }

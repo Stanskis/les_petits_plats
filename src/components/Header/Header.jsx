@@ -33,7 +33,7 @@ min-height: 644px;
     
 `;
 
-export default function Header({ data }) {
+export default function Header({ searchTerm, setSearchTerm, onSearch }) {
     return (
         <HeaderContainer>
             <Link href="/" className="logo">
@@ -48,7 +48,7 @@ export default function Header({ data }) {
             <div className="title text-center">
                 <h1>Découvrez nos recettes <br /> du quotidien, simples et délicieuses</h1>
             </div>
-            <HeaderSearchbar data={data} />
+            <HeaderSearchbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} onSearch={onSearch} />
         </HeaderContainer>
     );
 } 
