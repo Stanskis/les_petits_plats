@@ -43,9 +43,7 @@ export default function Home() {
     setSearchTerm("");
   };
 
-  // Фильтрация с учётом всех фильтров
   const filteredRecipes = recipes.filter(recipe => {
-    // Фильтр по ингредиентам
     if (selectedIngredients.length > 0) {
       const matchIngredients = selectedIngredients.every(selectedIng =>
         recipe.ingredients.some(i =>
@@ -55,7 +53,6 @@ export default function Home() {
       if (!matchIngredients) return false;
     }
 
-    // Фильтр по appliances
     if (selectedAppliances.length > 0) {
       const matchAppliances = selectedAppliances.some(app =>
         recipe.appliance?.toLowerCase().trim() === app.toLowerCase().trim()
@@ -63,7 +60,6 @@ export default function Home() {
       if (!matchAppliances) return false;
     }
 
-    // Фильтр по ustensils
     if (selectedUstensils.length > 0) {
       const matchUstensils = selectedUstensils.every(ust =>
         recipe.ustensils?.some(u =>
@@ -73,7 +69,6 @@ export default function Home() {
       if (!matchUstensils) return false;
     }
 
-    // Поиск через searchbar
     if (submittedTerm.length >= 3) {
       const lowerTerm = submittedTerm.toLowerCase();
       return (
@@ -121,7 +116,7 @@ export default function Home() {
         </section>
 
         {/* Recipe Cards */}
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8 max-w-[1400px] my-8 mx-auto">
+        <section className="max-w-[1400px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8  my-8 mx-auto">
           {filteredRecipes.map(recipe => (
             <RecipeCard
               key={recipe.id}
@@ -130,6 +125,7 @@ export default function Home() {
               description={recipe.description}
               ingredients={recipe.ingredients}
               time={recipe.time}
+              slug={recipe.slug}
             />
           ))}
         </section>

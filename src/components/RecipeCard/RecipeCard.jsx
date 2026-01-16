@@ -1,5 +1,6 @@
 "use client";
 import styled from "styled-components";
+import Link from "next/link";
 
 const CardWrapper = styled.div`
   display: flex;
@@ -103,37 +104,40 @@ const IngredientQuantity = styled.span`
 `;
 
 export default function RecipeCard({
-    img,
-    description,
-    title,
-    ingredients = [],
-    time
+  img,
+  description,
+  title,
+  ingredients = [],
+  time,
+  slug,
 }) {
-    return (
-        <CardWrapper>
-            <CardImageWrapper>
-                <CardImage src={img} alt={`${title} image`} />
-                {time && <TimeTag>{time}min</TimeTag>}
-            </CardImageWrapper>
+  return (
+    <CardWrapper>
+      <Link href={`/recette/${slug}`} style={{ textDecoration: 'none' }}>
+        <CardImageWrapper>
+          <CardImage src={img} alt={`${title} image`} />
+          {time && <TimeTag>{time}min</TimeTag>}
+        </CardImageWrapper>
 
-            <CardContent>
-                <CardTitle>{title}</CardTitle>
+        <CardContent>
+          <CardTitle>{title}</CardTitle>
 
-                <SectionTitle>RECETTE</SectionTitle>
-                <RecipeDescription>{description}</RecipeDescription>
+          <SectionTitle>RECETTE</SectionTitle>
+          <RecipeDescription>{description}</RecipeDescription>
 
-                <SectionTitle>INGRÉDIENTS</SectionTitle>
-                <IngredientsGrid>
-                    {ingredients.slice(0, 6).map((ing, idx) => (
-                        <IngredientItem key={idx}>
-                            <IngredientName>{ing.ingredient}</IngredientName>
-                            <IngredientQuantity>
-                                {ing.quantity ? `${ing.quantity}${ing.unit || ''}` : '-'}
-                            </IngredientQuantity>
-                        </IngredientItem>
-                    ))}
-                </IngredientsGrid>
-            </CardContent>
-        </CardWrapper>
-    );
+          <SectionTitle>INGRÉDIENTS</SectionTitle>
+          <IngredientsGrid>
+            {ingredients.slice(0, 6).map((ing, idx) => (
+              <IngredientItem key={idx}>
+                <IngredientName>{ing.ingredient}</IngredientName>
+                <IngredientQuantity>
+                  {ing.quantity ? `${ing.quantity}${ing.unit || ''}` : '-'}
+                </IngredientQuantity>
+              </IngredientItem>
+            ))}
+          </IngredientsGrid>
+        </CardContent>
+      </Link>
+    </CardWrapper>
+  );
 }
