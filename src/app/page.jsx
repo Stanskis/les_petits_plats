@@ -111,7 +111,7 @@ export default function Home() {
             />
           </div>
           <div>
-            <p className="font-anton text-xl mt-5 mr-10">{filteredRecipes.length} recette(s)</p>
+            <p className="font-anton text-xl mt-5 mr-10">{filteredRecipes.length} {filteredRecipes.length > 1 ? 'recettes' : 'recette'}</p>
           </div>
         </section>
 
