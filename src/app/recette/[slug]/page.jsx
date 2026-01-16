@@ -11,7 +11,7 @@ const Container = styled.div`
   padding: 40px 20px;
   gap: 60px;
   color: black;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-family: 'Manrope', sans-serif;
 
   @media (max-width: 968px) {
     flex-direction: column;
