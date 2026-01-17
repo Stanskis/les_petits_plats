@@ -55,6 +55,7 @@ const SearchWrapper = styled.div`
 const SearchInput = styled.input`
   width: 100%;
   height: 36px;
+    color: gray;
   border-radius: 8px;
   border: 1px solid #cfcfcf;
   padding: 0 36px 0 10px;
@@ -172,7 +173,7 @@ export default function IngredientFilter({ data = [], selectedIngredients = [], 
             {open ? (
               <svg width="14" height="8" viewBox="0 0 14 8" fill="none">
                 <path
-                  d="M0.5 0.5L7 6.5L13.5 0.5"
+                  d="M0.5 6.68045L7 0.68045L13.5 6.68045"
                   stroke="#1B1B1B"
                   strokeLinecap="round"
                 />
@@ -180,7 +181,7 @@ export default function IngredientFilter({ data = [], selectedIngredients = [], 
             ) : (
               <svg width="14" height="8" viewBox="0 0 14 8" fill="none">
                 <path
-                  d="M0.5 6.68045L7 0.68045L13.5 6.68045"
+                  d="M0.5 0.5L7 6.5L13.5 0.5"
                   stroke="#1B1B1B"
                   strokeLinecap="round"
                 />

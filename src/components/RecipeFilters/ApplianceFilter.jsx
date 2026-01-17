@@ -56,6 +56,7 @@ const SearchInput = styled.input`
   width: 100%;
   height: 36px;
   border-radius: 8px;
+    color: gray;
   border: 1px solid #cfcfcf;
   padding: 0 36px 0 10px;
   outline: none;
@@ -154,23 +155,25 @@ export default function ApplianceFilter({ data = [], selectedAppliances = [], on
             <FilterBox>
                 <FilterHeader $open={open} onClick={() => setOpen(!open)}>
                     <span>Appareils</span>
-                    <Arrow>            {open ? (
-                        <svg width="14" height="8" viewBox="0 0 14 8" fill="none">
-                            <path
-                                d="M0.5 0.5L7 6.5L13.5 0.5"
-                                stroke="#1B1B1B"
-                                strokeLinecap="round"
-                            />
-                        </svg>
-                    ) : (
-                        <svg width="14" height="8" viewBox="0 0 14 8" fill="none">
-                            <path
-                                d="M0.5 6.68045L7 0.68045L13.5 6.68045"
-                                stroke="#1B1B1B"
-                                strokeLinecap="round"
-                            />
-                        </svg>
-                    )}</Arrow>
+                    <Arrow>
+                        {open ? (
+                            <svg width="14" height="8" viewBox="0 0 14 8" fill="none">
+                                <path
+                                    d="M0.5 6.68045L7 0.68045L13.5 6.68045"
+                                    stroke="#1B1B1B"
+                                    strokeLinecap="round"
+                                />
+                            </svg>
+                        ) : (
+                            <svg width="14" height="8" viewBox="0 0 14 8" fill="none">
+                                <path
+                                    d="M0.5 0.5L7 6.5L13.5 0.5"
+                                    stroke="#1B1B1B"
+                                    strokeLinecap="round"
+                                />
+                            </svg>
+                        )}
+                    </Arrow>
                 </FilterHeader>
 
                 {open && (
